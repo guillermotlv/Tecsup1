@@ -1,0 +1,99 @@
+.body{
+    gap:1.5rem;
+    margin:0;
+    padding: 4rem;
+    flex-direction: column;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-image: url(https://i.postimg.cc/brSKyMR4/react-01-01.png);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+
+.header {
+    display: flex;
+}
+.header__image-container{
+    display: flex;
+    max-width: 256px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0;
+}
+.header__image{
+    display: flex;
+    max-width: 100%;
+}
+#tittle{color:white;font-size: x-large;}
+
+*{font-size: medium;color:whitesmoke;}
+
+a[href]{background-color: none;}
+
+.footer {
+    display:flex
+}
+.footer-nav {
+    display:flex
+}
+.footer-nav-container {
+    display:flex
+}
+.footer-nav__link-list {
+    display:flex;
+    gap:1rem;
+    flex-direction: row-reverse;
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+.footer-nav__link-item {
+    display:flex
+    
+}
+.footer-nav__link:hover {
+    transform:scale(1.85) rotate(360deg);
+    transition:all 2s;
+    filter:brightness(400%)
+
+
+    
+}
+.footer-nav__link-image {
+    
+}
+.article{
+    display: flex;
+}
+.article-container{
+    display:flex;
+    padding: 0 2rem ;
+}
+.article__card{
+    display:flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: #16181dbf;
+    max-width: 256px;
+    padding: 1rem;
+    border-radius:0.5rem;
+    box-sizing: border-box;
+}
+.article__card-tittle{
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.article__card-keywords{
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+.article__card-description ::before{
+    content: 💻;
+    margin: 0;
+    font-size: 0.85rem;
+    text-align: center
+}
