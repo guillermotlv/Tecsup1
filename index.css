@@ -1,0 +1,211 @@
+:root {
+    scroll-behavior: smooth;
+    --primary-theme-color: deeppink;
+    --secondary-theme-color: yellow;
+    --text-color: #fff;
+    --primary-shadow-color: #8888;
+    --secondary-shadow-color: #21242c80;
+    --button-color: #61dafb;
+    --button-color-active: #fff;
+    --button-text-color: #000;
+    --primary-highlight: #61dafb;
+    --secondary-highlight: #ffd700;
+    --padding-section: 2em 0;
+    --padding-container: 0 2em;
+    --max-width-container: 1024px;
+    --border-radius: 0.5rem;
+    --all-transitions: all 1s;
+    --letter-color-1: #00bef8;
+    --letter-color-2: #ff0697;
+    --letter-color-3: #ff4d00;
+    --letter-color-4: #ffe600;
+    --letter-color-5: #bb00ff;
+    --letter-color-6: #f5926b;
+    --letter-color-7: #45f4dc;
+    --letter-color-8: #4cf449;
+    --letter-color-9: #467cfa;
+  }
+  
+  @keyframes zoom { /* animacion*/ /*buscar animacion más abajo*/
+    from{
+        transform : scale(1)
+    }
+    to{
+        transform: scale(1.125)
+    }
+   
+  }
+
+  @keyframes spin{ /* animacion*/ /*buscar animacion más abajo*/
+    from{
+        transform : rotate(0)
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+
+  }
+
+.body{
+    margin: 0;
+    background-color: rgb(25, 25, 25);
+    /*
+    background-image: radial-gradient(var(--primary-theme-color), var(--secondary-theme-color)); /*PARA COLORES GRADIENTES*/ /*radial gradiente  para radio*/
+    
+    
+
+}
+
+.main{
+
+    
+}
+
+.cover{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    
+    
+}
+
+.cover__name{
+    animation: zoom /*spin*/ /*aca pongo la animacion que quiero (zoom) (spin)*/ 2s ease-in-out 0s /* tiempo que empieza puede ser negativo para que ya te muestre empezando*/infinite /*infinito*/alternate; /*adelante-atraz*/
+    font-family: 'Monoton', cursive;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 200;
+    
+    
+}
+
+.cover__name-letter{
+    transition: var(--all-transitions); /*se pone aca para que cuando saque el click, se vaya lento, en tal caso va en hover y sera intenso*/
+    position: relative;
+
+    
+}
+.cover__name-letter:hover{
+    font-size: 10rem;
+    filter:brightness(250%);
+}
+
+.cover__name-letter:nth-child(1){ /* Puedo usar "N" para darle funcion de cuanto en cuento con eso se puede hacer zebras*/
+    color: var(--letter-color-1)    
+}
+.cover__name-letter:nth-child(2){
+    color: var(--letter-color-2)    
+}
+.cover__name-letter:nth-child(3){
+    color: var(--letter-color-3)    
+}
+.cover__name-letter:nth-child(4){
+    color: var(--letter-color-4)    
+}
+.cover__name-letter:nth-child(5){
+    color: var(--letter-color-5)    
+}
+.cover__name-letter:nth-child(6){
+    color: var(--letter-color-6)    
+}
+.cover__name-letter:nth-child(7){
+    color: var(--letter-color-7)    
+}
+.cover__name-letter:nth-child(8){
+    color: var(--letter-color-8)    
+}
+.cover__name-letter:nth-child(9){
+    color: var(--letter-color-9)    
+}
+
+.cover__name-letter::before{
+    content: var(--letter);
+    position:absolute;
+    transform: scale(1.5);
+    filter:blur(1rem)
+    
+
+}
+
+.cover__name-letter:hover::after{ /* Puedo poner un pseudo elemento luego*/ /*Puedo ponerle HOVER para que solo aparesca cuando*/
+    content: var(--letter);
+    position:absolute;
+    left:0;
+    top:80%;
+    filter:blur(0.20rem);
+    transform:rotateX(125deg) ; /*para rotar la copia y paresca real*/
+    
+
+}
+
+@media (min-width: 854px) {
+    .cover__name {
+      font-size: 8rem;
+    }
+  }
+
+  .acrostic{
+    /*min-height: 100vh;*/
+    padding : var(--padding-section)
+    /*background-color: #000*/;
+  }
+  .acrostic__stanza{
+    display:flex;
+    flex-direction: column;
+    margin:0 ;
+    gap:2rem;
+    padding:0;
+    list-style: none;
+    padding:var(--padding-container);
+    margin: auto;
+    max-width: var(--max-width-container);
+    
+
+  }
+  .acrostic__verse{
+      color: var(--button-color-active);
+      letter-spacing: 0.05rem;
+      font-size: x-large;
+      font-weight: 500;
+      transition: var(--all-transitions);
+      text-shadow: /*para que se vea más intenso como un foquito*/
+      0 0 0.25rem var(--letter-color-1), 
+      0 0 0.5rem var(--letter-color-1),
+      0 0 0.75rem var(--letter-color-1);
+      
+  }
+  .box{
+
+      width: 10rem;
+      height: 10rem;
+      background-color: #4cf449;
+      margin:auto;
+  }
+  .box:hover{
+    
+    box-shadow: 1rem 1rem 0 0 var(--button-color),
+    -1rem -1rem 0 0 var(--letter-color-2);
+  }
+
+  .acrostic__verse:hover{
+      filter:brightness(150%);
+      font-size: 2rem;
+  }
+
+  .acrostic__verse::first-letter{
+    font-size: 2rem;
+    color: var(--letter-color-4);
+    font-weight: 800;
+
+  }
+
+  @media (min-width: 854px){
+      .cover__name {
+          font-size: 8rem;
+      }
+  }
